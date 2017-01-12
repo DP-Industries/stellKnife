@@ -4,6 +4,9 @@ $(document).ready(function(){
   		backgroundColor: 'grey',
   	})
   })
+  $('#close_modal').click(function(){
+    $('.modal_image').css('display','none');
+  })
   $('#hamburger').mouseout(function(){
     $('#hamburger div').css({
       backgroundColor: 'black',
@@ -11,20 +14,9 @@ $(document).ready(function(){
   })
   $('nav ul li').mouseover(function(){
     $link = $(this);
-    // $link.find('span').animate({
-    //   width: 25
-    // },200)
-    // $link.find('span').css({
-    //   width: 25
-    // },200)
     $('nav ul li span').removeClass('active');
     $link.find('span').addClass('active');
   })
-  // $('nav ul li').hover(function(){
-  //   $('nav ul li span').css({
-  //     width: 0
-  //   })
-  // })
   $('#catalog').mouseover(function(){
     $('#catalog nav').css({
       display: 'block',
@@ -53,12 +45,10 @@ $(document).ready(function(){
   $window_height = $(window).height();
   change_sidebar();
   resize_category();
-  // install_dark_layout();
   hide_sidebar();
   $(window).resize(function(){
   	change_sidebar();
     resize_category();
-    // install_dark_layout();
     fixed_sidebar();
   })
 function change_sidebar(){
@@ -98,7 +88,6 @@ function slide_sidebar($bootstrap_margin, $time){
       height: $dl_height
     })
     if($visible == 'block'){
-      //прячем
       $('.dark_layout').animate({
         opacity: 0
       }, 1000);
@@ -112,7 +101,6 @@ function slide_sidebar($bootstrap_margin, $time){
       })
     }
     else if($visible == 'none'){
-      //показываем
       $('.dark_layout').css({
         display: 'block'
       })
@@ -128,12 +116,7 @@ function slide_sidebar($bootstrap_margin, $time){
       }, 1000)
     }
   }
-  // function install_dark_layout(){
-  //   $dl_height = $('html').height();
-  //   $('.dark_layout').css({
-  //     height: $dl_height
-  //   })
-  // }
+
   function beautiful_slide($bootstrap_margin, $time){
     $window_width = $(window).width();
     $visible = $('aside').css('display');
@@ -141,7 +124,6 @@ function slide_sidebar($bootstrap_margin, $time){
     $aside_width = $('aside').outerWidth();
     if($window_width >= 768 && $window_width < 1200){
       if($visible == 'block'){
-        //прячем
         $('aside').animate({
           marginLeft: -($aside_width + $bootstrap_margin),
         },$time, function(){
@@ -153,7 +135,6 @@ function slide_sidebar($bootstrap_margin, $time){
 
       }
       else if($visible == 'none'){
-        //показываем
         $aside_width = $('aside').outerWidth();
         $('aside').css({
           display: 'block',
