@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SteelKnife - магазин ножей</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title><?php wp_title( '|', true, 'right' ); ?></title>
+    <meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <link href="<?php bloginfo('template_directory');?>/img/favicon/favicon.png" rel="icon" type="image/x-icon">
     <link href="<?php bloginfo('template_directory');?>/libs/bootstrap-grid.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_directory');?>/css/style.css" rel="stylesheet">
